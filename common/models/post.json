@@ -21,15 +21,15 @@
   },
   "validations": [],
   "relations": {
-    "user": {
+    "Categoty": {
       "type": "belongsTo",
-      "model": "user",
-      "foreignKey": "userId"
+      "model": "Categoty",
+      "foreignKey": "categoryId"
     },
-    "Profile": {
-      "type": "belongsTo",
-      "model": "Profile",
-      "foreignKey": "profileId"
+    "PostImage":{
+      "type" : "hasMany",
+      "model": "PostImage",
+      "foreignKey": ""
     }
   },
   "acls": [
@@ -43,6 +43,12 @@
       "accessType": "WRITE",
       "principalType": "ROLE",
       "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "editor",
       "permission": "ALLOW"
     }
   ],

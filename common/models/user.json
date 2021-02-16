@@ -15,19 +15,9 @@
   },
   "validations": [],
   "relations": {
-    "Profile": {
-      "type": "hasOne",
-      "model": "Profile",
-      "foreignKey": ""
-    },
-    "CommonAccessToken": {
-      "type": "hasMany",
-      "model": "CommonAccessToken",
-      "foreignKey": "userId"
-    },
-    "Post": {
-      "type": "hasMany",
-      "model": "Post",
+    "PostImage":{
+      "type" : "hasMany",
+      "model": "PostImage",
       "foreignKey": ""
     }
   },
