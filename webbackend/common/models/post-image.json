@@ -1,36 +1,21 @@
 {
-  "name": "Post",
+  "name": "PostImage",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "title": {
-      "type": "string"
-    },
-    "slug": {
-      "type": "string"
-    },
-    "content": {
+    "url": {
       "type": "string"
     },
     "created_at": {
-      "type": "number"
+      "type": "date"
     }
   },
   "validations": [],
   "relations": {
-    "Categoty": {
-      "type": "belongsTo",
-      "model": "Categoty",
-      "foreignKey": "categoryId"
-    },
-    "PostImage":{
-      "type" : "hasMany",
-      "model": "PostImage",
-      "foreignKey": ""
-    }
+ 
   },
   "acls": [
     {

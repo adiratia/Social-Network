@@ -1,5 +1,5 @@
 {
-  "name": "Category",
+  "name": "Post",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -9,16 +9,19 @@
     "title": {
       "type": "string"
     },
+    "slug": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
     "created_at": {
-      "type": "date"
+      "type": "number"
     }
   },
   "validations": [],
   "relations": {
-    "Post": {
-      "type": "hasMany",
-      "model": "Post"
-    }
+
   },
   "acls": [
     {

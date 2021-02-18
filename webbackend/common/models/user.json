@@ -15,11 +15,7 @@
   },
   "validations": [],
   "relations": {
-    "PostImage":{
-      "type" : "hasMany",
-      "model": "PostImage",
-      "foreignKey": ""
-    }
+
   },
   "acls": [],
   "methods": {}

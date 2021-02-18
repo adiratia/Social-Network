@@ -1,12 +1,12 @@
 {
-  "name": "PostImage",
+  "name": "Category",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "url": {
+    "title": {
       "type": "string"
     },
     "created_at": {
@@ -15,18 +15,6 @@
   },
   "validations": [],
   "relations": {
-    "Post":{
-      "type" : "belongsTo",
-      "model": "Post",
-      "foreignKey": "postId"
-    },
-    "user":{
-      "type" : "belongsTo",
-      "model": "user",
-      "foreignKey": "userId"
-    }
-
-
 
   },
   "acls": [
