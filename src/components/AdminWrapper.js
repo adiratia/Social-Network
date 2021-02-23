@@ -1,7 +1,7 @@
 import react,{Component} from 'react'
 import {defaultCipherList} from 'constants'
-import "./assets/admin.css";
-
+import "./assets/css/admin.css";
+import Sidebar from './Common/Sidebar';
 
 import classNames from 'classnames';
 import {withStyles}  from '@material-ui/core/styles'
@@ -20,6 +20,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 const DrawerWidth = 240;
 const styles = theme =>({
+    root:{
+        display:'flex'
+    },
     toolbar : {
         paddingRight : 24
     },
@@ -41,6 +44,7 @@ const styles = theme =>({
 
         })
     },
+    appBarSpace: theme.mixins.toolbar,
     drawerPaperClose:{
         overflowX :'hidden',
         width: theme.spacing.unit * 7,
@@ -66,6 +70,12 @@ const styles = theme =>({
         justifyContent : "flex-end",
         padding : "0 8px",
         ...theme.mixins.toolbar
+    },
+    content:{
+        flexGrow:1,
+        padding:theme.spacing.unit *3,
+        height: '100vh',
+        overflow:'auto'
     }
 
 })
@@ -91,7 +101,7 @@ class AdminWrapper extends Component{
     render(){
         const {classes}= this.props;
         return (
-            <div id="admin-page">
+            <div id="admin-page" className= {classes.root}>
                 <AppBar className ={classNames(classes.appBar,this.state.open && classes.appBarShift)}>
                     <Toolbar className ={classes.toolbar}>
                         <IconButton onClick = {this.handleDrawerOpen}>
@@ -122,12 +132,12 @@ class AdminWrapper extends Component{
                         </IconButton>
                     </div>
                     <Divider/>
-                    <List>
-                        <ListItem>Dashboard</ListItem>
-                    </List>
+                    <Sidebar/>
                 </Drawer>
-
-                {this.props.children}
+                <main className={classes.content}>
+                    <div className={classes.appBarSpace}/>
+                    {this.props.children}   
+                </main>
             </div>
 
         )

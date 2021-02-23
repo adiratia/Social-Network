@@ -5,26 +5,77 @@ import {connect} from 'react-redux';
 //Pages
 import Login from './components/Pages/login'
 import AdminWrapper from './components/AdminWrapper'
-import Dashboard from './components/Pages/Dashboard'
+import Dashboard from './components/Pages/Admin/Dashboard'
+import LoginWrapper from './components/LoginWrapper'
+import Users from './components/Pages/Admin/User';
+import Posts from './components/Pages/Admin/Posts';
+
 class App extends Component {
   render(){
 
     return (
       <Router>
         <Route 
-        path='/admin'
-        render = {props =>{
-          console.log("Props",props);
-          return (
-            <AdminWrapper>
-            {this.props.auth.token ?
-            <Dashboard/>
-            :
-            <Login/>
-          }
-          </AdminWrapper>
-          )
-        }}
+          path ='/admin/users'
+          render = {props =>{
+            console.log("Props",props);
+            return (
+              <div>
+              {this.props.auth.token ?
+              <AdminWrapper>
+              <Users/>
+              </AdminWrapper>
+              :
+              <LoginWrapper>
+              <Login/>
+              </LoginWrapper>
+            }
+            </div>
+
+            )
+          }}       
+           />
+        <Route 
+          path ='/admin/posts'
+          render = {props =>{
+            console.log("Props",props);
+            return (
+              <div>
+              {this.props.auth.token ?
+              <AdminWrapper>
+              <Posts/>
+              </AdminWrapper>
+              :
+              <LoginWrapper>
+              <Login/>
+              </LoginWrapper>
+            }
+            </div>
+
+            )
+          }}        
+          />
+
+        <Route 
+          exact = {true}
+          path='/admin'
+          render = {props =>{
+            console.log("Props",props);
+            return (
+              <div>
+              {this.props.auth.token ?
+              <AdminWrapper>
+              <Dashboard/>
+              </AdminWrapper>
+              :
+              <LoginWrapper>
+              <Login/>
+              </LoginWrapper>
+            }
+            </div>
+
+            )
+          }}
          />
       </Router>
 
