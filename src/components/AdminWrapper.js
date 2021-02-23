@@ -27,9 +27,9 @@ const styles = theme =>({
         zIndex : theme.zIndex.drawer +1,
         transition : theme.transitions.create(['width','margin'],{
             easing : theme.transitions.easing.sharp,
-            duration : theme.transitions.duration.leavingScreen,
+            duration : theme.transitions.duration.leavingScreen
 
-        }),
+        })
 
     },
     appBarShift : {
@@ -37,18 +37,18 @@ const styles = theme =>({
         width :`calc(100% - ${DrawerWidth}px)`,
         transition : theme.transitions.create(['width','margin'],{
             easing : theme.transitions.easing.sharp,
-            duration : theme.transitions.duration.enteringScreen,
+            duration : theme.transitions.duration.enteringScreen
 
-        }),
+        })
     },
     drawerPaperClose:{
         overflowX :'hidden',
-        width: theme.spacing.unit*7,
+        width: theme.spacing.unit * 7,
         transition : theme.transitions.create('width',{
             easing : theme.transitions.easing.sharp,
-            duration : theme.transitions.duration.leavingScreen,
+            duration : theme.transitions.duration.leavingScreen
 
-        }),
+        })
     },
     drawerPaper : {
         position : "relative",
@@ -56,9 +56,9 @@ const styles = theme =>({
         width: DrawerWidth,
         transition : theme.transitions.create('width',{
             easing : theme.transitions.easing.sharp,
-            duration : theme.transitions.duration.enteringScreen,
+            duration : theme.transitions.duration.enteringScreen
 
-        }),
+        })
     },
     toolbarIcon:{
         display: 'flex',
@@ -73,6 +73,7 @@ const styles = theme =>({
 class AdminWrapper extends Component{
     constructor(props){
         super(props);
+
         this.state={
             open:true
         }
@@ -82,6 +83,8 @@ class AdminWrapper extends Component{
     }
     handleDrawerClose =(e)=>{
         this.setState({open:false});
+
+
     }
     
 
@@ -91,7 +94,7 @@ class AdminWrapper extends Component{
             <div id="admin-page">
                 <AppBar className ={classNames(classes.appBar,this.state.open && classes.appBarShift)}>
                     <Toolbar className ={classes.toolbar}>
-                        <IconButton OnClick = {this.handleDrawerOpen}>
+                        <IconButton onClick = {this.handleDrawerOpen}>
                             <MenuIcon/>
                         </IconButton>
                         <Typography
@@ -102,7 +105,9 @@ class AdminWrapper extends Component{
                             >
                             Admin
                         </Typography>
-                    </Toolbar>
+
+                </Toolbar>
+
                 </AppBar>
                 <Drawer 
                      classes ={{
