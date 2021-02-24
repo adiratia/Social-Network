@@ -4,9 +4,11 @@ import {connect} from 'react-redux';
 
 //Pages
 import Login from './components/Pages/login'
+import LoginWrapper from './components/LoginWrapper'
+
+//Admin Pages
 import AdminWrapper from './components/AdminWrapper'
 import Dashboard from './components/Pages/Admin/Dashboard'
-import LoginWrapper from './components/LoginWrapper'
 import Users from './components/Pages/Admin/User';
 import Posts from './components/Pages/Admin/Posts';
 

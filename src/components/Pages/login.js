@@ -47,7 +47,7 @@ class Login extends Component{
                                 )
                             })}
                             <div className = "col-md-12">
-                                <button className = "btn_primary">Login</button>
+                                <button className = "btn btn-primary">Login</button>
                             </div>
 
                             </form>
