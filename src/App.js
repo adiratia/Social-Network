@@ -11,6 +11,8 @@ import AdminWrapper from './components/AdminWrapper'
 import Dashboard from './components/Pages/Admin/Dashboard'
 import Users from './components/Pages/Admin/User';
 import Posts from './components/Pages/Admin/Posts';
+import AddPost from './components/Pages/Admin/AddPost';
+
 
 class App extends Component {
   render(){
@@ -26,6 +28,26 @@ class App extends Component {
               {this.props.auth.token ?
               <AdminWrapper>
               <Users/>
+              </AdminWrapper>
+              :
+              <LoginWrapper>
+              <Login/>
+              </LoginWrapper>
+            }
+            </div>
+
+            )
+          }}       
+           />
+        <Route 
+          path ='/admin/posts/add'
+          render = {props =>{
+            console.log("Props",props);
+            return (
+              <div>
+              {this.props.auth.token ?
+              <AdminWrapper>
+              <AddPost/>
               </AdminWrapper>
               :
               <LoginWrapper>

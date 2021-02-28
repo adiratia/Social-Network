@@ -17,13 +17,13 @@ class Users extends Component{
     }
 
     render(){
-        const users= this.props.admin.users;
+       // const users= this.props.admin.users;
         return(
             <div>
                 <h1>Users</h1>
                 <TableView
                     columns ={columns}
-                    rows= {users}
+                    rows= {[]}
                     />
             </div>
         )

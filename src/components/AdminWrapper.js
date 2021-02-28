@@ -47,7 +47,7 @@ const styles = theme =>({
     appBarSpace: theme.mixins.toolbar,
     drawerPaperClose:{
         overflowX :'hidden',
-        width: theme.spacing.unit * 7,
+        width: theme.spacing(7),
         transition : theme.transitions.create('width',{
             easing : theme.transitions.easing.sharp,
             duration : theme.transitions.duration.leavingScreen
@@ -73,7 +73,7 @@ const styles = theme =>({
     },
     content:{
         flexGrow:1,
-        padding:theme.spacing.unit *3,
+        padding:theme.spacing(3),
         height: '100vh',
         overflow:'auto'
     }
