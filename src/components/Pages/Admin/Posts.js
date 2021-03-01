@@ -26,14 +26,14 @@ class Posts extends Component{
         this.props.getPosts(this.props.auth.token);
     }
     render(){
-        //const posts= this.props.admin.posts;
+        const posts= this.props.admin.posts;
         const {classes} =this.props;
         return(
             <div>
                 <h1>Posts</h1>
                 <TableView
                     columns ={columns}
-                    rows= {[]}
+                    rows= {posts}
                     />
                     <Fab component={RouterLink} to ='/admin/posts/add' color="secondary" aria-label="Add" className={classes.fab}>
                         <EditIcon/>
@@ -45,7 +45,7 @@ class Posts extends Component{
 const mapStateToProps = state => {
     return {
         auth: state.auth,
-        auth: state.admin
+        admin: state.admin
     }
 }  
 

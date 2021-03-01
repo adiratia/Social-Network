@@ -20,7 +20,14 @@ const  API =  {
     .then(res=>{
         success(res);
     })
-}
+    },
+    addPost : (post,token,success)=>{
+    axios.post(`http://localhost:4200/api/Posts?access_token=${token}`,post)
+    .then(res=>{
+        success(res);
+    })
+    }
+
 }
 
 export default API;

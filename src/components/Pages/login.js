@@ -32,9 +32,8 @@ class Login extends Component{
                             }} >
                             {fields.map((f,i)=>{
                             return(
-                                <div className = "col-md-12">                                
+                                <div className = "col-md-12" key={i}>                                
                                     <Field
-                                    key={i}
                                     {...f}
                                     value={this.props.values[f.name]}
                                     name={f.name}
