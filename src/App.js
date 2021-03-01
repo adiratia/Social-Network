@@ -12,6 +12,7 @@ import Dashboard from './components/Pages/Admin/Dashboard'
 import Users from './components/Pages/Admin/User';
 import Posts from './components/Pages/Admin/Posts';
 import AddPost from './components/Pages/Admin/AddPost';
+import Register from './components/Pages/register';
 
 
 class App extends Component {
@@ -102,6 +103,27 @@ class App extends Component {
             )
           }}        
           />
+        <Route 
+          exact = {true}
+          path='/register'
+          render = {props =>{
+            console.log("Props",props);
+            return (
+              <div>
+              {this.props.auth.token ?
+              <AdminWrapper>
+              <Dashboard/>
+              </AdminWrapper>
+              :
+              <LoginWrapper>
+              <Register/>
+              </LoginWrapper>
+            }
+            </div>
+
+            )
+          }}
+         />
 
         <Route 
           exact = {true}

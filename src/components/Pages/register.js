@@ -9,13 +9,12 @@ import {Link as RouterLink} from 'react-router-dom';
 import Link from '@material-ui/core/Link';
 
 const fields =[
+    {name: 'name' , elementName : 'input' , type : 'string', placeholder:'Your Name'},
     {name: 'email' , elementName : 'input' , type : 'email', placeholder:'Your email'},
     {name: 'password' , elementName : 'input' , type : 'password', placeholder:'Your Password'}
-
-
 ]
 
-class Login extends Component{
+class Register extends Component{
 
     render(){
 
@@ -24,7 +23,7 @@ class Login extends Component{
                 <div className = "containter" >
                     <div className = "login-form">
                          <div className= "row">
-                             <h1>Login</h1>
+                             <h1>Register</h1>
                          </div>
                         <div className= "row">
                             <form >
@@ -51,24 +50,17 @@ class Login extends Component{
                                         e.preventDefault();
                                         this.props.login(this.props.values.email,this.props.values.password);
                                     }}>
-                                    Login
-                                </Button>
-                                <br/>
-                                <br/>
-                                <Button component={RouterLink} to ='/register' color="secondary" aria-label="Register">
                                     Register
-                                 </Button>
+                                </Button>
                             </div>
 
                             </form>
                           </div>
                     </div>
                 </div>
-            </div>
-        )
+            </div>        )
     }
 }
-
 const mapStateToProps = state =>{
     return {
         auth: state.auth
@@ -99,4 +91,4 @@ export default connect(
         console.log("Login attempt", values);
         login(values.email,values.password);
     }
-})(Login));
+})(Register));

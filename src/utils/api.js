@@ -9,6 +9,12 @@ const  API =  {
             success(res);
         });
    },
+   register: (name,email,pass,success) =>{
+    axios.post('http://localhost:4200/api/users/', {name:name,email:email,password:pass})
+    .then(res => {
+        success(res);
+    });
+},
    getUsers : (token,success)=>{
        axios.get(`http://localhost:4200/api/users?access_token=${token}`)
        .then(res=>{
