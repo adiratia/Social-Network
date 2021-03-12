@@ -11,7 +11,9 @@ import Link from '@material-ui/core/Link';
 const fields =[
     {name: 'name' , elementName : 'input' , type : 'string', placeholder:'Your Name'},
     {name: 'email' , elementName : 'input' , type : 'email', placeholder:'Your email'},
-    {name: 'password' , elementName : 'input' , type : 'password', placeholder:'Your Password'}
+    {name: 'password' , elementName : 'input' , type : 'password', placeholder:'Your Password'},
+    {name: 'password2' , elementName : 'input' , type : 'password', placeholder:'Your Password Again'}
+
 ]
 
 class Register extends Component{
@@ -48,7 +50,7 @@ class Register extends Component{
                                     color="secondary" 
                                     onClick = {e =>{
                                         e.preventDefault();
-                                        this.props.login(this.props.values.email,this.props.values.password);
+                                        this.props.register(this.props.values.name,this.props.values.email,this.props.values.password);
                                     }}>
                                     Register
                                 </Button>
@@ -68,8 +70,8 @@ const mapStateToProps = state =>{
 }
 const mapDispatchToProps =dispatch =>{
     return {
-    login:(email, password)=>{
-        dispatch(AuthActions.login(email,password));
+    register:(name,email, password)=>{
+        dispatch(AuthActions.register(name,email,password));
     }
 
     }
@@ -86,9 +88,5 @@ export default connect(
     validationSchema: Yup.object().shape({
         email : Yup.string().email('Email is invalid. ').required('you need to login with email address'),
         password: Yup.string().required('You need to enter your password')
-    }),
-    handleSubmit : (values,{setSubmitting},login) =>{
-        console.log("Login attempt", values);
-        login(values.email,values.password);
-    }
+    })
 })(Register));

@@ -113,7 +113,7 @@ class AdminWrapper extends Component{
                             color = "inherit"
                             noWrap
                             >
-                            Admin
+                            Hello
                         </Typography>
 
                 </Toolbar>

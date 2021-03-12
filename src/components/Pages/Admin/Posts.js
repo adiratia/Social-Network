@@ -10,7 +10,9 @@ import Link from '@material-ui/core/Link';
 
 const columns =[
     {label : 'ID',  name: 'id'},
-    {label : 'Title',  name: 'title'}
+    {label : 'Title',  name: 'title'},
+    {label : 'Slug',  name: 'slug'},
+    {label : 'Content',  name: 'content'}
 ]
 const styles = theme =>({
     fab : {
@@ -18,6 +20,13 @@ const styles = theme =>({
         bottom : '50px',
         right: '50px',
 
+    },
+    header: {
+        padding: '30px',
+        textAlign: 'center',
+        background: '#F0F8FF',
+        color: 'black',
+        fontSize: '30px'
     }
 });
 
@@ -30,7 +39,7 @@ class Posts extends Component{
         const {classes} =this.props;
         return(
             <div>
-                <h1>Posts</h1>
+                <h1 className={classes.header}>Posts</h1>
                 <TableView
                     columns ={columns}
                     rows= {posts}

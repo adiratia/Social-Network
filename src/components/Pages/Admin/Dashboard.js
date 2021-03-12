@@ -1,12 +1,15 @@
 import React,{Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+import * as AdminActions from '../../../store/actions/adminActions'
+
 
 class Dashboard extends Component{
 
     render(){
+
         return(
-            <h1>You are logged in with token : {this.props.auth.token}</h1>
+            <h1>Welocme to my social network</h1>
 
         )
 
@@ -15,17 +18,21 @@ class Dashboard extends Component{
 
 const mapStateToProps = state => {
     return {
-      auth: state.auth
+        auth: state.auth,
+        admin: state.admin
     }
-}
-const mapDiaptchToProps =dispatch =>{
-    return {
-  
-    }
-}
+}  
 
+const mapDiaptchToProps = dispatch =>{
+    return {
+        getPosts:(token) =>{
+            dispatch(AdminActions.getPosts(token));
+        }
+    }
+}
 export default connect(
     mapStateToProps,
     mapDiaptchToProps
+
 )(withRouter(Dashboard));
   

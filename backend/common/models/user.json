@@ -17,6 +17,18 @@
   "relations": {
 
   },
-  "acls": [],
+  "acls": [    {
+    "accessType": "WRITE",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW"
+  },
+  {
+    "accessType": "WRITE",
+    "principalType": "ROLE",
+    "principalId": "admin",
+    "permission": "ALLOW"
+  }
+],
   "methods": {}
 }
